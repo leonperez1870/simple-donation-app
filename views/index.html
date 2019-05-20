@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Donation App</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <h1>Simple Donation App</h1>
+    <section class="D-box js-dataGrab"
+             data-total="<%= amtNeeded %>"
+             data-received="<%= amtRecieved %>"
+             data-due-date="<%= dueDate %>">
+      <div class="D-box__container">
+        <div class="D-box__msg">
+          <h3><span class="js-amtLeft"></span> still needed for this project</h3>
+        </div>
+        <div class="D-box__main">
+          <div class="progressBar js-progBar"></div>
+          <div class="inner">
+            <p><span class="daysLeft js-daysLeft"></span> to fund this project.</p>
+            <p>Join the <%=numOfDonors %> who have already supported this project. Every $$$ helps.</p>
+            <form class="form js-form" method="post">
+              <input type="number" name="donationAmt" value="">
+              <button type="submit" name="button">Give Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script type="text/javascript" src="/js/app.js"></script>
+</html>
