@@ -20,9 +20,9 @@
           <div class="inner">
             <p><span class="daysLeft js-daysLeft"></span> to fund this project.</p>
             <p>Join the <%=numOfDonors %> who have already supported this project. Every $$$ helps.</p>
-            <form class="form js-form" method="post">
+            <form class="form js-form" method="post" action="/receive-donation">
               <input type="number" name="donationAmt" value="">
-              <button type="submit" name="button">Give Now</button>
+              <button type="submit" name="donateBtn">Give Now</button>
             </form>
           </div>
         </div>
