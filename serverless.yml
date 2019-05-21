@@ -7,7 +7,14 @@ functions:
   app:
     handler: app.handler
     events:
-      - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http:
+          path: /
+          method: get
+      - http:
+          path: /receiveDonation
+          method: post
+      - http:
+          path: /data
+          method: get
 plugins:
   - serverless-offline
