@@ -16,5 +16,8 @@ functions:
       - http:
           path: /data
           method: get
+      - http:
+          path: /js/app.js
+          method: get
 plugins:
   - serverless-offline
