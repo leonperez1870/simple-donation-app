@@ -1,10 +1,10 @@
-#Donation App
+# Donation App
 
 FaaS Web App with continuous deployment to AWS Lambda
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
-##Overview
+## Overview
 
 The function of this web app is to take in donations from a form, send a post request with the donation amount, store it in a local json file and update the front end accordingly with the updated data. This web app uses [Serverless Framework](https://serverless.com/) for deployment to [AWS λ](https://aws.amazon.com/lambda) and [API Gateway](https://aws.amazon.com/api-gateway) via [Travis CI](https://travis-ci.org). The [serverless-offline](https://github.com/dherault/serverless-offline) plugin allows for local development.
 
