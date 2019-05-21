@@ -3,9 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let dataTotal = parseInt(dataDiv.dataset.total);
   let dataReceived = parseInt(dataDiv.dataset.received);
   let dueDate = dataDiv.dataset.dueDate;
-  let stillNeeded = Math.abs(dataTotal - dataReceived);
-  document.querySelector('.js-amtLeft').innerHTML = `$${stillNeeded}`;
-
+  let stillNeeded = dataTotal - dataReceived;
+  if (stillNeeded < 0) {
+    document.querySelector('.js-amtLeft').innerHTML = `$0`;
+  } else {
+    document.querySelector('.js-amtLeft').innerHTML = `$${stillNeeded}`;
+  }
   const oneDay = 24*60*60*1000;
   let firstDate = new Date();
   let secondDate = new Date(dueDate);
@@ -47,4 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show a popup here!
     console.log(hasDonated);
   }
+
+  let percentTotal = Math.floor(dataReceived / dataTotal * 100);
+  if (percentTotal > 90 && percentTotal < 100) {
+    percentTotal = 90;
+  } else {
+    percentTotal = Math.ceil((percentTotal+1) / 10) * 10;
+  }
+  if (percentTotal > 100) {
+    percentTotal = 100;
+  }
+  document.querySelector('.js-progBar').dataset.width = percentTotal;
 });
