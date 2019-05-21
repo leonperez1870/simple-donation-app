@@ -6,6 +6,7 @@ provider:
 functions:
   app:
     handler: app.handler
+    package: public/
     events:
       - http:
           path: /
